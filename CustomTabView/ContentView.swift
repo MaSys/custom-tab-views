@@ -29,6 +29,7 @@ struct ContentView: View {
             CustomTabs(index: self.$index)
         }
         .background(Color.black.opacity(0.05).edgesIgnoringSafeArea(.top))
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -51,7 +52,7 @@ struct CustomTabs: View {
                 Image(systemName: "house")
                     .imageScale(.large)
             })
-            .foregroundColor(Color.black.opacity(self.index == 0 ? 1 : 0.2))
+            .foregroundColor(Color.label.opacity(self.index == 0 ? 1 : 0.4))
 
             Spacer(minLength: 0)
 
@@ -61,7 +62,7 @@ struct CustomTabs: View {
                 Image(systemName: "magnifyingglass")
                     .imageScale(.large)
             })
-            .foregroundColor(Color.black.opacity(self.index == 1 ? 1 : 0.2))
+            .foregroundColor(Color.label.opacity(self.index == 1 ? 1 : 0.4))
             .offset(x: 10)
 
             Spacer(minLength: 0)
@@ -83,7 +84,7 @@ struct CustomTabs: View {
                 Image(systemName: "heart")
                     .imageScale(.large)
             })
-            .foregroundColor(Color.black.opacity(self.index == 2 ? 1 : 0.2))
+            .foregroundColor(Color.label.opacity(self.index == 2 ? 1 : 0.4))
             .offset(x: -10)
 
             Spacer(minLength: 0)
@@ -94,12 +95,13 @@ struct CustomTabs: View {
                 Image(systemName: "person")
                     .imageScale(.large)
             })
-            .foregroundColor(Color.black.opacity(self.index == 3 ? 1 : 0.2))
+            .foregroundColor(Color.label.opacity(self.index == 3 ? 1 : 0.4))
 
         }
         .padding(.horizontal, 35)
         .padding(.top, 35)
-        .background(Color.white)
+        .padding(.bottom, 35)
+        .background(Color.secondarySystemBackground)
         .clipShape(CShape())
     }
 }
